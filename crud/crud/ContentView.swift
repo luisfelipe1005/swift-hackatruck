@@ -1,6 +1,7 @@
 import SwiftUI
 import UIKit
 
+// Modelo e Extensão permanecem iguais
 struct Monstro: Codable, Hashable {
     let _id: String?
     let _rev: String?
@@ -25,13 +26,11 @@ struct Monstro: Codable, Hashable {
     let traits: String?
     let actions: String?
     let hdurl: String?
-    
 }
 
 extension String {
     var htmlToSwiftUIString: AttributedString {
         guard let data = self.data(using: .utf8) else { return AttributedString(self) }
-        
         do {
             let nsAttributedString = try NSAttributedString(
                 data: data,
@@ -50,76 +49,104 @@ extension String {
 
 struct ContentView: View {
     @State private var viewModel = ViewModel()
-    
     @State private var mostrarCriarMonstro = false
+    @State private var mostrarCriarMonstroadv = false
     
     var body: some View {
-        
-        
-        ZStack(){
-            Color.red.ignoresSafeArea()
-            NavigationStack{
-                ScrollView{
-                    VStack{
-                        VStack {
-                            ForEach(viewModel.monstros, id:\.self){c in
+        NavigationStack {
+            ZStack {
+                Color.red.ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 16) {
+                        
+                        if viewModel.monstros.isEmpty {
+                            VStack(spacing: 15) {
+                                Image(systemName: "folder.badge.questionmark")
+                                    .font(.system(size: 60))
+                                    .foregroundColor(.white)
                                 
+                                Text("Nenhum monstro encontrado.")
+                                    .font(.title2)
+                                    .bold()
+                                    .foregroundColor(.white)
                                 
+                                Text("Clique nos botões acima para criar seu primeiro monstro!")
+                                    .font(.subheadline)
+                                    .foregroundColor(.white.opacity(0.8))
+                                    .multilineTextAlignment(.center)
+                            }
+                            .padding(.top, 100)
+                            
+                        } else {
+                            ForEach(viewModel.monstros, id:\.self) { c in
                                 NavigationLink(destination: ShowView(objeto: c)) {
-                                    HStack{
-                                        
-                                        AsyncImage(url: URL(string: c.hdurl ?? "https://media.tenor.com/ngNha_kjdWwAAAAe/shitpost-dog.png" )){ result in
+                                    HStack {
+                                        AsyncImage(url: URL(string: c.hdurl ?? "https://media.tenor.com/ngNha_kjdWwAAAAe/shitpost-dog.png")) { result in
                                             result.image?
                                                 .resizable()
                                                 .scaledToFit()
                                         }
                                         .frame(width: 50, height: 50)
-                                        VStack{
-                                            Text("\(c.name ?? "teste")").font(.title)
-                                                                                        Text("\(c.cr ?? 0) ")
-                                            
+                                        .cornerRadius(8)
+                                        
+                                        VStack(alignment: .leading) {
+                                            Text(c.name ?? "Sem Nome").font(.headline).foregroundColor(.black)
+                                            Text("CR: \(c.cr ?? 0)").font(.subheadline).foregroundColor(.gray)
                                         }
+                                        Spacer()
                                     }
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 2)
                                 }
-                                
-                                
-                                
-                            }.background(Color.white).border(.black)
-                                .navigationTitle("Monstros").frame(width: 350)
-                            
-                            
-                            
-                                .toolbar {
-                                                    ToolbarItem(placement: .navigationBarTrailing) {
-                                                        Button(action: {
-                                                            mostrarCriarMonstro = true
-                                                        }) {
-                                                            Image(systemName: "plus.circle.fill")
-                                                                .font(.title2)
-                                                                .foregroundColor(.white)
-                                                        }
-                                                    }
-                                                }
-                                                
-                                                .sheet(isPresented: $mostrarCriarMonstro) {
-                                                  
-                                                    CreateView(viewModel: viewModel)
-                                                }
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                            }
                         }
-                        .ignoresSafeArea()}
-                }}
-        }.task{
+                    }
+                    .padding()
+                }
+                .navigationTitle("Monstros")
+                
+                // MARK: - Barra de Ferramentas (Toolbar)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        
+                        HStack(spacing: 16) {
+                            
+                            Button(action: {
+                                mostrarCriarMonstroadv = true
+                            }) {
+                                Image(systemName: "sparkles")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            }
+                            
+                            Button(action: {
+                                mostrarCriarMonstro = true
+                            }) {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }
+                }
+                
+                .sheet(isPresented: $mostrarCriarMonstro) {
+                    CreateView(viewModel: viewModel)
+                }
+                .sheet(isPresented: $mostrarCriarMonstroadv) {
+                    CreateAdvView(viewModel: viewModel)
+                }
+            }
+        }
+        .task {
             await viewModel.fetch()
         }
     }
 }
+
 #Preview("ContentView") {
     ContentView()
 }
