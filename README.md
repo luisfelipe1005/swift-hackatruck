@@ -3,74 +3,102 @@
 ![Swift](https://img.shields.io/badge/Swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-007AFF?style=for-the-badge&logo=swift&logoColor=white)
 ![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)
+![CoreML](https://img.shields.io/badge/CoreML-FF9500?style=for-the-badge&logo=apple&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![ESP8266](https://img.shields.io/badge/ESP8266-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
 ![Node-RED](https://img.shields.io/badge/Node--RED-8F0000?style=for-the-badge&logo=nodered&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
 Este repositório reúne todos os projetos práticos, desafios e estudos desenvolvidos durante as aulas do **HackaTruck MakerSpace**, projeto de capacitação profissional em desenvolvimento iOS e Internet das Coisas (IoT) realizado pelo **Instituto de Pesquisas Eldorado** na **Universidade Federal de Santa Maria (UFSM)**.
 
-A estrutura deste portfólio reflete a evolução prática ao longo do curso: partindo da construção de interfaces declarativas com **SwiftUI**, avançando pelo consumo de APIs REST, geolocalização e frameworks nativos da Apple, até chegar à integração ponta a ponta com microcontroladores (**ESP8266**), sensores físicos e servidores em **Node-RED**.
+A estrutura deste portfólio reflete a evolução prática ao longo do curso: partindo da construção de interfaces declarativas com **SwiftUI**, avançando por frameworks nativos de Machine Learning e Mídia (**CoreML, Vision, AVFoundation**), integrações de Inteligência Artificial (**Gemini**), até chegar à integração ponta a ponta com microcontroladores (**ESP8266**), sensores físicos e servidores em **Node-RED**.
 
 ---
 
 ## 🗂️ Catálogo de Projetos por Módulo
 
-Os projetos foram divididos em quatro módulos temáticos de acordo com os conceitos abordados em aula:
+Os projetos foram divididos em quatro módulos temáticos de acordo com os conceitos abordados em aula.
 
 ### 🎨 Módulo 1: Fundamentos de UI, Estados e Navegação (SwiftUI)
+
 Projetos focados na construção de layouts responsivos, manipulação de estados (`@State`) e roteamento entre telas (`NavigationStack`).
 
-1. **🔲 Estudo de Layout: Cantos da Tela**
-   * **Foco:** Posicionamento elástico sem coordenadas fixas.
-   * **Destaques:** Uso combinado de `VStack`, `HStack` e `Spacer()` para ancorar formas geométricas nos quatro cantos de qualquer dispositivo.
-2. **🍳 Componente UI: Card de Item (Airfryer)**
-   * **Foco:** Criação de células reutilizáveis para listas e perfis.
-   * **Destaques:** Recorte de imagens com `.clipShape(Circle())`, alinhamento horizontal/vertical e controle de frames.
-3. **🐆 Calculadora de Velocidade (Animal Speed)**
-   * **Foco:** Reatividade de interface e lógica condicional.
-   * **Destaques:** Cálculo de velocidade média com inputs numéricos (`TextField`), alterando dinamicamente a cor de fundo da tela e exibindo o animal correspondente à faixa de velocidade (da Tartaruga ao Carro de F1).
-4. **🎨 Navegação Temática e Passagem de Dados**
-   * **Foco:** Fluxo de dados unidirecional entre telas.
-   * **Destaques:** Captura de texto na tela principal e envio de parâmetros customizados (cor, texto e ícone do *SF Symbols*) via `NavigationLink` para estilizar a tela de destino.
-5. **🎬 Catálogo de Filmes e Séries**
-   * **Foco:** Listas dinâmicas, filtros e carregamento de mídia remota.
-   * **Destaques:** Uso de `AsyncImage`, propriedades computadas com `.filter` (separando Filmes, Séries e Top IMDb) e combinação de rolagem vertical com carrossel horizontal (`ScrollView`).
+1. **🔲 Estudo de Layout: Cantos da Tela** — Posicionamento elástico sem coordenadas fixas (`Spacer`).
+2. **🍳 Componente UI: Card de Item (Airfryer)** — Criação de células reutilizáveis e recorte de imagens.
+3. **🐆 Calculadora de Velocidade** — Reatividade de interface e lógica condicional.
+4. **🎨 Navegação Temática** — Fluxo de dados unidirecional entre telas via `NavigationLink`.
+5. **🎬 Catálogo de Filmes e Séries** — Listas dinâmicas, filtros (`.filter`) e `AsyncImage`.
 
----
+### 🧠 Módulo 2: Frameworks Nativos e Machine Learning On-Device
 
-### 🗺️ Módulo 2: Geolocalização e Frameworks Nativos
-Exploração de recursos nativos do ecossistema Apple para criar experiências interativas.
+Exploração de recursos nativos do ecossistema Apple para criar experiências interativas e inteligentes.
 
-6. **🌍 Mapa das Maravilhas do Mundo**
-   * **Foco:** Integração do `MapKit` com SwiftUI.
-   * **Destaques:** Renderização de marcadores (`Marker`) nas coordenadas reais das 7 Maravilhas do Mundo, controle de câmera animado (`MapCameraPosition`) via `Picker`, e exibição de detalhes em modais (`.sheet`) utilizando `@Binding`.
+6. **🌍 Mapa das Maravilhas do Mundo** — Integração do `MapKit` com marcadores dinâmicos.
+7. **👁️ Vision Identifier (IA On-Device)** — Classificação de imagens e detecção de objetos utilizando redes neurais locais (`MobileNetV2` e `YOLOv3`) com `CoreML` e `Vision`.
+8. **📚 Study Cast (Leitor OCR & TTS)** — Extração de textos de fotos (`VNRecognizeTextRequest`) e leitura em voz alta do conteúdo utilizando `AVFoundation`.
 
----
+### 🌐 Módulo 3: Consumo de APIs REST, Persistência e IA Cloud
 
-### 🌐 Módulo 3: Consumo de APIs REST, Persistência e Recursos Avançados
-Aplicações baseadas na arquitetura **MVVM** (`@Observable`), concorrência moderna do Swift (`async/await`) e integração com bancos de dados NoSQL via Node-RED.
+Integrações complexas utilizando **MVVM** (`@Observable`), concorrência moderna (`async/await`) e bancos de dados.
 
-7. **🌌 NASA APOD Explorer (Fotos Astronômicas do Dia)**
-   * **Foco:** Consumo de API pública externa (`science.nasa.gov`).
-   * **Destaques:** Requisições `GET` assíncronas com `URLSession`, decodificação JSON (`Codable`) e uma extensão customizada para converter textos com tags HTML nativamente em `AttributedString`.
-8. **🐉 Bestiário RPG (Fichas de Monstros D&D)**
-   * **Foco:** Operações de leitura e escrita (GET e POST) em servidor local.
-   * **Destaques:** Listagem de criaturas, visualização de *Stat Blocks* completos e formulário categorizado (`Form`) para criação e envio de novos monstros em JSON para o backend Node-RED/Cloudant.
-9. **🍕 Cardápio Digital Inteligente com Tradução**
-   * **Foco:** Agrupamento de dados e acessibilidade para usuários globais.
-   * **Destaques:** Agrupamento automático de pratos por categoria com `Dictionary(grouping:by:)` e integração do framework nativo **Apple Translation** (`.translationPresentation`), permitindo traduzir os itens do cardápio com um toque.
-
----
+9. **🌌 NASA APOD Explorer** — Consumo da API pública da NASA com decodificação JSON.
+10. **🐉 Bestiário RPG (Fichas e IA Generativa)** — Operações CRUD via Node-RED e geração de novos monstros via Engenharia de Prompt usando o **Google Gemini** (`FirebaseAI`).
+11. **🍕 Cardápio Inteligente com Tradução** — Agrupamento de coleções e tradução nativa em tempo real com a *Translation API* da Apple.
 
 ### 📡 Módulo 4: Internet das Coisas (IoT) — Hardware & Mobile
-Sistemas completos de ponta a ponta que conectam o mundo físico ao iPhone, unindo programação embarcada em **C++ (Arduino/ESP8266)** ao desenvolvimento iOS.
 
-10. **🌡️ Sistema IoT de Monitoramento de Temperatura**
-    * **Hardware:** Microcontrolador ESP8266 lendo dados reais de temperatura via protocolo I2C em um sensor **BMP280** e disparando requisições `HTTP POST` a cada 5 segundos para o servidor Node-RED.
-    * **App iOS:** Consome a rota de leitura da API e exibe o histórico de temperaturas em cards modernos com estilização em gradiente.
-11. **💧 Monitor de Umidade IoT em Tempo Real (WebSockets & Gráficos)**
-    * **Hardware:** ESP8266 realizando leitura analógica (`A0`) do sensor de umidade e atuando como um servidor **WebSocket** (`WebSocketsServer` na porta 81), fazendo *broadcast* contínuo de pacotes JSON na rede local.
-    * **App iOS:** Mantém conexão persistente de baixa latência via `URLSessionWebSocketTask` e `Combine`, animando um indicador visual de nível de água em tempo real e plotando o histórico de variações em um gráfico de barras nativo com **Swift Charts**.
+Sistemas ponta a ponta que conectam o mundo físico ao iPhone utilizando C++ e Swift.
+
+12. **🌡️ Sistema IoT de Monitoramento de Temperatura** — Sensor **BMP280 (I2C)** comunicando-se com Node-RED via POST, com os dados exibidos em cards modernos no iOS.
+13. **💧 Monitor de Umidade em Tempo Real (WebSockets)** — Conexão de baixa latência transmitindo dados analógicos e renderizando gráficos nativos com **Swift Charts**.
+
+---
+
+## 🔍 Detalhes dos Projetos Avançados
+
+<details>
+<summary><strong>🐉 1. Bestiário RPG - App de Monstros com IA Generativa</strong> <em>(Clique para expandir)</em></summary>
+
+<br>
+
+Este é um aplicativo iOS nativo construído com SwiftUI, projetado para gerenciar e visualizar fichas de monstros de RPG (como D&D 5e e Tales of the Valiant). Ele permite aos usuários listar monstros, visualizar atributos e criar novas criaturas manualmente ou utilizando Inteligência Artificial (Google Gemini).
+
+- **Telas Principais:**
+  - **Lista de Monstros:** Navegação dinâmica e `AsyncImage` para carregar avatares.
+  - **Ficha de Detalhes:** Layout temático exibindo *Stat Blocks* completos (Atributos, CA, HP, Ações).
+  - **Criação Manual:** Formulários em SwiftUI com validação de entrada de dados numéricos.
+  - **Criação com IA (`FirebaseAI`):** Interface de chat que recebe uma ideia do usuário, cria um prompt estrito para o modelo `gemini-3.1-flash-lite`, faz o *parsing* da resposta com Regex para isolar o JSON gerado e salva automaticamente no banco.
+
+- **Rede e Arquitetura:** Baseado em MVVM (`@Observable`), o app consome as rotas `/adicionar` (GET) e `/criar` (POST) de um servidor Node-RED / Cloudant.
+
+</details>
+
+<details>
+<summary><strong>👁️ 2. Vision Identifier - Visão Computacional On-Device</strong> <em>(Clique para expandir)</em></summary>
+
+<br>
+
+App projetado para realizar análise de imagens locais utilizando Inteligência Artificial rodando diretamente no dispositivo (*On-Device*).
+
+- **Múltiplas Redes Neurais:** Permite alternar via *Toggle* entre **MobileNetV2** (para classificar o contexto principal da imagem) e **YOLOv3** (para detectar e mapear objetos específicos).
+- **Processamento (`Vision` + `CoreML`):**
+  - Transforma `UIImage` em `CIImage`.
+  - Envia requisições (`VNCoreMLRequest`) em *Background Threads* para não travar a interface.
+  - Extrai as observações (`VNClassificationObservation` ou `VNRecognizedObjectObservation`) para exibir o resultado e o grau de confiança da IA.
+
+</details>
+
+<details>
+<summary><strong>📚 3. Study Cast - OCR e Leitura em Voz Alta (TTS)</strong> <em>(Clique para expandir)</em></summary>
+
+<br>
+
+Focado em produtividade e acessibilidade, este app permite que o usuário extraia textos de cadernos, livros ou documentos e escute o conteúdo em voz alta.
+
+- **Seleção Segura de Mídia (`PhotosUI`):** Utiliza o `PhotosPicker` nativo do iOS 16+ para acessar fotos de maneira segura sem requerer permissão total à galeria.
+- **Extração de Texto (OCR):** Usa o framework `Vision` (`VNRecognizeTextRequest`) configurado para precisão máxima (`.accurate`), correção linguística nativa e suporte a múltiplos idiomas (`pt-BR`, `en-US`).
+- **Síntese de Voz (`AVFoundation`):** Instancia um `AVSpeechSynthesizer` para transformar o texto capturado em áudio, com controle de idioma de narração e ajuste de velocidade de reprodução para facilitar o estudo.
+
+</details>
 
 ---
 
@@ -78,28 +106,37 @@ Sistemas completos de ponta a ponta que conectam o mundo físico ao iPhone, unin
 
 | Categoria | Tecnologias Utilizadas |
 | :--- | :--- |
-| **Desenvolvimento iOS** | Swift, SwiftUI, Combine, Observation (`@Observable`), Swift Charts, MapKit, Translation API, UIKit |
-| **Rede & Dados (Mobile)** | `URLSession` (`async/await`), `URLSessionWebSocketTask`, `JSONDecoder` / `JSONEncoder`, REST |
-| **Hardware & IoT** | C++, NodeMCU (ESP8266), Sensor BMP280 (I2C), Sensor de Umidade Analógico |
-| **Backend & Middleware** | Node-RED, WebSockets, Bancos NoSQL (CouchDB / Cloudant) |
-| **IDEs & Ambiente** | Xcode, Arduino IDE, Simulador iOS |
+| **Desenvolvimento iOS** | Swift, SwiftUI, Combine, Observation (`@Observable`), UIKit |
+| **Machine Learning & IA** | CoreML, Vision, FirebaseAI (Google Gemini), Translation API |
+| **Recursos Nativos (Mídia)** | AVFoundation (TTS), PhotosUI, MapKit, Swift Charts |
+| **Rede & Dados (Mobile)** | `URLSession` (`async/await`), WebSockets, JSONDecoder/Encoder |
+| **Hardware & IoT** | C++, NodeMCU (ESP8266), Sensores (BMP280 I2C, Umidade) |
+| **Backend & Middleware** | Node-RED, CouchDB / IBM Cloudant |
 
 ---
 
 ## 🚀 Como Executar os Projetos
 
-1. **Clone este repositório:**
-   `git clone https://github.com/luisfelipe1005/swift-hackatruck.git`
-2. **Projetos Mobile (Xcode):**
-   * Navegue até a pasta do projeto desejado e abra o arquivo `.xcodeproj` no **Xcode**.
-   * Nos projetos que consomem o **Node-RED** ou **ESP8266**, verifique o endereço IP configurado nos arquivos `ViewModel.swift` ou `SensorViewModel.swift` e ajuste para o IP da sua máquina/microcontrolador na rede local.
-3. **Projetos de Hardware (ESP8266):**
-   * Abra os códigos C++ (`.ino` / `.cpp`) na **Arduino IDE**.
-   * Instale as bibliotecas necessárias no Gerenciador de Bibliotecas (`WebSockets` por Markus Sattler, `Adafruit BMP280 Library` e `Adafruit Unified Sensor`).
-   * Configure o SSID e a senha da sua rede Wi-Fi antes de gravar o firmware na placa.
+### 1. Clone este repositório
+
+```bash
+git clone https://github.com/luisfelipe1005/swift-hackatruck.git
+```
+
+### 2. Projetos Mobile (Xcode)
+
+- Abra o arquivo `.xcodeproj` no **Xcode** (Requer iOS 16+ para alguns frameworks como PhotosUI).
+- Para projetos **IoT / Servidor Local**: No arquivo `ViewModel.swift`, altere a URL de `127.0.0.1` para o **endereço IP** real da sua máquina na rede local caso vá testar em um iPhone físico.
+- Para projetos com **CoreML**: Verifique se os arquivos `.mlmodel` (ex: YOLOv3, MobileNetV2) estão importados corretamente no projeto.
+
+### 3. Projetos de Hardware (ESP8266)
+
+- Abra os códigos `.cpp` / `.ino` na **Arduino IDE**.
+- Configure o `WIFI_SSID` e `WIFI_PASSWORD`.
+- Faça a instalação das bibliotecas requeridas via Library Manager antes do upload.
 
 ---
 
 ## 🎓 Agradecimentos e Instituição
 
-Projetos desenvolvidos durante a passagem do laboratório móvel do **HackaTruck MakerSpace** pela **Universidade Federal de Santa Maria (UFSM)**, uma iniciativa patrocinada e executada pelo **Instituto de Pesquisas Eldorado** para fomentar a formação prática em tecnologias Apple e IoT nas universidades brasileiras.
+Projetos desenvolvidos durante a passagem do laboratório móvel do **HackaTruck MakerSpace** pela **Universidade Federal de Santa Maria (UFSM)**, uma iniciativa patrocinada e executada pelo **Instituto de Pesquisas Eldorado** para fomentar a formação prática e tecnológica nas universidades brasileiras.
