@@ -1,12 +1,14 @@
 # 🚚💻 Portfólio de Projetos: HackaTruck MakerSpace (UFSM)
 
-![Swift](https://img.shields.io/badge/Swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-007AFF?style=for-the-badge&logo=swift&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)
-![CoreML](https://img.shields.io/badge/CoreML-FF9500?style=for-the-badge&logo=apple&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![ESP8266](https://img.shields.io/badge/ESP8266-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
-![Node-RED](https://img.shields.io/badge/Node--RED-8F0000?style=for-the-badge&logo=nodered&logoColor=white)
+<p align="left">
+  <img src="https://img.shields.io/badge/Swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" alt="Swift" height="28">
+  <img src="https://img.shields.io/badge/SwiftUI-007AFF?style=for-the-badge&logo=swift&logoColor=white" alt="SwiftUI" height="28">
+  <img src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" alt="iOS" height="28">
+  <img src="https://user-images.githubusercontent.com/45159366/132140795-bbb0ed1e-b1f7-4716-bc4d-8ebffde6fd00.png" alt="CoreML" height="28">
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" height="28">
+  <img src="https://img.shields.io/badge/ESP8266-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP8266" height="28">
+  <img src="https://img.shields.io/badge/Node--RED-8F0000?style=for-the-badge&logo=nodered&logoColor=white" alt="Node-RED" height="28">
+</p>
 
 Este repositório reúne todos os projetos práticos, desafios e estudos desenvolvidos durante as aulas do **HackaTruck MakerSpace**, projeto de capacitação profissional em desenvolvimento iOS e Internet das Coisas (IoT) realizado pelo **Instituto de Pesquisas Eldorado** na **Universidade Federal de Santa Maria (UFSM)**.
 
